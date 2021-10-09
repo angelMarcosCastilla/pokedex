@@ -16,25 +16,24 @@
   <body>
     <section class="container">
       <div class="container-pokemon">
-        <form action="" class="form">
-          <input  class="form__input" type="search" placeholder="nombre pokemon" />
+        <form action="" class="form" id="form">
+          <input  class="form__input" type="search" placeholder="nombre pokemon" name="search"/>
           <button class="form__button">buscar</button>
         </form>
         <div class="container-image">
           <img
             src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/132.svg"
             alt="image pokemon"
+            id="imagen"
           />
         </div>
-
-        <div id="" class="pokemon-details" name=""  readonly="true">
-                Lorem ipsum dolor sit amet.
+        <p> types: </p>
+        <div id="description" class="">
          </div>
       </div>
-      <div class="container-chart">
-        <h2 class="h2">Habilidades</h2>
+      <div class="container-chart" >
         <div>
-            <canvas id="myChart"  width="400" height="400"></canvas>
+            <canvas id="myChart"  width="500" height="400"></canvas>
         </div>
       </div>
     </section>
