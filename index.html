@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pokedex</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <section class="container">
+      <div class="container-pokemon">
+        <form action="" class="form">
+          <input  class="form__input" type="search" placeholder="nombre pokemon" />
+          <button class="form__button">buscar</button>
+        </form>
+        <div class="container-image">
+          <img
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/132.svg"
+            alt="image pokemon"
+          />
+        </div>
+
+        <div id="" class="pokemon-details" name=""  readonly="true">
+                Lorem ipsum dolor sit amet.
+         </div>
+      </div>
+      <div class="container-chart">
+        <h2 class="h2">Habilidades</h2>
+        <div>
+            <canvas id="myChart"  width="400" height="400"></canvas>
+        </div>
+      </div>
+    </section>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
