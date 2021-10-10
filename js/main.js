@@ -1,11 +1,12 @@
 import colors from "./colorConfig.js"
 import paintChartPokemon from "./paintChartPokemon.js"
+
 const $form = document.getElementById("form");
 const $imagen = document.getElementById("imagen");
 const $description = document.getElementById("description");
 const $container = document.getElementById("container");
 const $name = document.getElementById("name")
-
+const $loader = document.getElementById("loader")
 
 
 const paintPokemon = ({ image, stats, types,name }) => {
@@ -31,15 +32,18 @@ const paintPokemon = ({ image, stats, types,name }) => {
 };
 
 const getPokemon = (searchPokemon) => {
+  $loader.classList.add("loader--active")
   fetch(`https://pokeapi.co/api/v2/pokemon/${searchPokemon}`)
-    .then((res) => res.ok ? res.json(): Promise.reject(res))
-    .then((pokemon) => {
+  .then((res) => res.ok ? res.json(): Promise.reject(res))
+  .then((pokemon) => {
+      $loader.classList.remove("loader--active")
       const { stats, sprites, types, forms} = pokemon;
       const name = forms[0].name
       const image = sprites.other.dream_world.front_default;
       paintPokemon({ image, stats, types,name });
     })
     .catch(error => {
+      $loader.classList.remove("loader--active")
       Swal.fire({
         title:"error",
         text:"El nombre o id, no pertenece a ningun pokemon",
@@ -53,6 +57,7 @@ $form.addEventListener("submit", (e) => {
   const $search = e.target["search"].value;
   if ($search !== "") {
     getPokemon($search);
+    $form.reset()
   }
 });
 
