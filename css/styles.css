@@ -1,3 +1,4 @@
+
 *,
 ::after,
 ::before {
@@ -10,7 +11,7 @@ body {
   min-height: 100vh;
   place-items: center;
   font-family: "Inter", sans-serif;
-  background: #f29b3350	;
+  background: #BDBDBD10;
 }
 
 img {
@@ -24,9 +25,9 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #f29b33		;
+  background: #BDBDBD;
   border-radius: 1rem;
-  box-shadow: 5px 5px 10px #f29b33	, -5px -5px 10px #f29b33		;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, .3)		;
 }
 
 .container-pokemon,
@@ -42,14 +43,13 @@ img {
   width: 90%;
   display: flex;
   justify-content: space-between;
-  background: peru;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
 }
 
 .form__input,
 .form__button {
   padding: 0.5rem 0;
-  border: 1px solid #155150 ;
+  border: 1px solid #131313 ;
   outline: none;
   border-radius: 0;
   font-size: 1rem;
@@ -61,7 +61,7 @@ img {
 
 .form__button {
   width: 30%;
-  background: #155150;
+  background: #131313;
   color: white;
 }
 .container-image {
@@ -81,13 +81,12 @@ img {
     color:white;
     border: 0;
     border-radius: 16px;
-    background: #155150;
+    background: #131313;
 }
 
-.container-chart {
-}
+
 
 .h1{
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   text-align: center;
 }

@@ -14,17 +14,18 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <section class="container">
+    <section class="container" id="container">
       <div class="container-pokemon">
         <form action="" class="form" id="form">
           <input
             class="form__input"
             type="search"
-            placeholder="nombre pokemon"
+            placeholder="nombre o id"
             name="search"
           />
           <button class="form__button">buscar</button>
         </form>
+        <h2 id="name" class="h1">----</h2>
         <div class="container-image">
           <img
             class="imagen"
@@ -34,7 +35,9 @@
           />
         </div>
         <p>types:</p>
-        <div id="description" class=""></div>
+        <div id="description" class="">
+          <span class="pokemon-types">----</span>
+        </div>
       </div>
       <div class="container-chart">
         <div>
@@ -44,6 +47,6 @@
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="./js/main.js" type="module"></script>
   </body>
 </html>
