@@ -5,7 +5,11 @@ const $imagen = document.getElementById("imagen");
 const $description = document.getElementById("description");
 let myChart = null;
 
-const paintChartPokemon = ({ statsName , baseStat}) => {
+const colors = {
+  "grass":"#33827a",
+  "fire":"#"
+}
+const paintChartPokemon = ({ statsName, baseStat }) => {
   if (myChart) myChart.destroy();
   myChart = new Chart(ctx, {
     type: "radar",
@@ -14,8 +18,8 @@ const paintChartPokemon = ({ statsName , baseStat}) => {
       datasets: [
         {
           label: "Habilidades",
-          borderColor: "rgb(38,213,38)",
-          backgroundColor: "rgba(38,213,38,.2)",
+          borderColor: "#f29b33",
+          backgroundColor:"#f2f2f270",
           data: baseStat,
         },
       ],
@@ -25,17 +29,17 @@ const paintChartPokemon = ({ statsName , baseStat}) => {
         r: {
           beginAtZero: true,
           angleLines: {
-            color: "#718DABd",
+            color: "white",
           },
           grid: {
-            color: "#718DAB",
+            color: "white",
           },
           ticks: {
-            color: "black",
+            color: "white",
             backgroundColor: "none",
           },
           pointLabels: {
-            color: "green",
+            color: "#010",
             font: {
               size: 16,
             },
@@ -44,7 +48,7 @@ const paintChartPokemon = ({ statsName , baseStat}) => {
       },
       plugins: {
         legend: {
-          display: false,
+          display: true,
         },
       },
     },
@@ -52,6 +56,7 @@ const paintChartPokemon = ({ statsName , baseStat}) => {
 };
 
 const paintPokemon = ({ image, stats, types }) => {
+  $description.innerHTML = "";
   $imagen.setAttribute("src", image);
   types.forEach(({ type }) => {
     $description.innerHTML += ` <span class="pokemon-types">${type.name}</span>`;
@@ -60,9 +65,10 @@ const paintPokemon = ({ image, stats, types }) => {
     .map(({ stat }) => stat.name)
     .filter((stat) => !stat.includes("special"));
 
-    const baseStat = stats.map(({ stat }) => stat.base_stat)
-    console.log(statsName);
-  paintChartPokemon({ statsName , baseStat});
+  const baseStat = stats
+    .filter(({ stat }) => !stat.name.includes("special"))
+    .map(({ base_stat }) => base_stat);
+  paintChartPokemon({ statsName, baseStat });
 };
 
 const getPokemon = (searchPokemon) => {
@@ -82,3 +88,4 @@ $form.addEventListener("submit", (e) => {
     getPokemon($search);
   }
 });
+

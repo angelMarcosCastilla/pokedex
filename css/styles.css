@@ -10,10 +10,11 @@ body {
   min-height: 100vh;
   place-items: center;
   font-family: "Inter", sans-serif;
-  background: white;
+  background: #f29b3350	;
 }
 
 img {
+  display: block;
   max-width: 100%;
 }
 .container {
@@ -23,9 +24,9 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #fefefe;
+  background: #f29b33		;
   border-radius: 1rem;
-  box-shadow: 5px 5px 10px #124544, -5px -5px 10px #185d5c;
+  box-shadow: 5px 5px 10px #f29b33	, -5px -5px 10px #f29b33		;
 }
 
 .container-pokemon,
@@ -42,7 +43,7 @@ img {
   display: flex;
   justify-content: space-between;
   background: peru;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 }
 
 .form__input,
@@ -64,16 +65,16 @@ img {
   color: white;
 }
 .container-image {
-  background: orange;
-  width: 250px;
-  height: 250px;
   border-radius: 50%;
   margin: 0 auto;
   display: grid;
   place-items: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
-
+.imagen{
+  width: 270px;
+  height: 270px;
+}
 .pokemon-types {
     width: auto;
     padding: .5rem 1rem;
