@@ -32,12 +32,19 @@ const paintPokemon = ({ image, stats, types,name }) => {
 
 const getPokemon = (searchPokemon) => {
   fetch(`https://pokeapi.co/api/v2/pokemon/${searchPokemon}`)
-    .then((res) => res.json())
+    .then((res) => res.ok ? res.json(): Promise.reject(res))
     .then((pokemon) => {
       const { stats, sprites, types, forms} = pokemon;
       const name = forms[0].name
       const image = sprites.other.dream_world.front_default;
       paintPokemon({ image, stats, types,name });
+    })
+    .catch(error => {
+      Swal.fire({
+        title:"error",
+        text:"El nombre o id, no pertenece a ningun pokemon",
+        icon:"error"
+      })
     });
 };
 
@@ -49,4 +56,10 @@ $form.addEventListener("submit", (e) => {
   }
 });
 
+Swal.fire({
+  imageUrl:"./assets/images/pokebolas.png",
+  title: 'Pokedex',
+  text: 'Debes buscar el pokemom por nombre o id',
+  confirmButtonText: 'entiendo',
+})
 paintChartPokemon();
