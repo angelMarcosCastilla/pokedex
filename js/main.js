@@ -50,7 +50,6 @@ const getPokemon = (searchPokemon) => {
       paintPokemon({ image, statsName, baseStat, types, name, color });
     })
     .catch((error) => {
-      console.log(error);
       $loader.classList.remove("loader--active");
       Swal.fire({
         title: "error",
@@ -70,7 +69,9 @@ $form.addEventListener("submit", (e) => {
 });
 
 addEventListener("DOMContentLoaded", () => {
+
   paintChartPokemon();
+  
   Swal.fire({
     imageUrl: "./assets/images/pokebolas.png",
     title: "Pokedex",
